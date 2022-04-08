@@ -1,0 +1,26 @@
+<div style="padding-left: 16px; padding-bottom: 16px;">
+  <mat-card>
+    <form [formGroup]="job" (ngSubmit)="onSubmit(job.value)">
+      <mat-card-title>Creat new job</mat-card-title>
+
+      <mat-label>Post</mat-label>
+      <input formControlName="post">
+      <br>
+
+      <mat-label>Time</mat-label>
+      <input formControlName="time">
+      <br>
+
+      <mat-label>new field</mat-label>
+      <ng-container formArrayName="optionFields">
+        <div *ngFor="let field of optionFields.controls;let i = index;">
+          <input class="form-control" placeholder="produit..." [formControlName]="i" type="text">
+          <button type="button" class="dell" (click)="removeField(i)">Remove</button>
+        </div>
+      </ng-container>
+      <button class="btn btn-outline-success" type="button" (click)="addField()">add field</button>
+        <button mat-button color="primary" type="submit">submit</button>
+    </form>
+  </mat-card>
+</div>
+
