@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarComponent } from './view/calendar/calendar.component';
 import { CreatjobComponent } from './view/creatjob/creatjob.component';
 import { EmployeesComponent } from './view/employees/employees.component';
 import { HomeComponent } from './view/home/home.component';
