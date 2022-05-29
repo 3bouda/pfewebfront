@@ -9,12 +9,22 @@ import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { initializeApp } from '@firebase/app';
+import { environment } from '../environments/environment';
+import { getDatabase } from '@firebase/database';
 
 import { NavComponent } from './view/nav/nav.component';
 import { HomeComponent } from './view/home/home.component';
 import { EmployeesComponent } from './view/employees/employees.component';
 import { CreatjobComponent } from './view/creatjob/creatjob.component';
 import { JobsComponent } from './view/jobs/jobs.component';
+import { CalendarComponent } from './view/calendar/calendar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +33,8 @@ import { JobsComponent } from './view/jobs/jobs.component';
     HomeComponent,
     EmployeesComponent,
     CreatjobComponent,
-    JobsComponent
+    JobsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +42,14 @@ import { JobsComponent } from './view/jobs/jobs.component';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
