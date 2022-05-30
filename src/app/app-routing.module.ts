@@ -7,6 +7,7 @@ import { HomeComponent } from './view/home/home.component';
 import { JobsComponent } from './view/jobs/jobs.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DepartementComponent } from './view/departement/departement.component';
+import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -15,11 +16,12 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent},
 
   { path: 'creatjob', component: CreatjobComponent},
-  { path: 'employees', component: EmployeesComponent}
+  { path: 'employees', component: EmployeesComponent},
+  { path: 'addemployee', component: AddemployeeComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),FontAwesomeModule],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

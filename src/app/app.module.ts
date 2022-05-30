@@ -26,6 +26,7 @@ import { JobsComponent } from './view/jobs/jobs.component';
 import { CalendarComponent } from './view/calendar/calendar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartementComponent } from './view/departement/departement.component';
+import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DepartementComponent } from './view/departement/departement.component';
     CreatjobComponent,
     JobsComponent,
     CalendarComponent,
-    DepartementComponent
+    DepartementComponent,
+    AddemployeeComponent
   ],
   imports: [
     BrowserModule,
