@@ -12,8 +12,11 @@ export class JobsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  creatRouting(){
+  goToAdd(){
     this.router.navigate(['/creatjob']);
+  }
+  goToService(){
+    this.router.navigate(['/departement']);
   }
 
 }
