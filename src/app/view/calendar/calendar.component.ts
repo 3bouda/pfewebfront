@@ -79,6 +79,11 @@ export class CalendarComponent  {
       title: 'An event with no end date',
       color: colors.yellow,
       actions: this.actions,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
@@ -86,6 +91,11 @@ export class CalendarComponent  {
       title: 'A long event that spans 2 months',
       color: colors.blue,
       allDay: true,
+      resizable: {
+        beforeStart: true,
+        afterEnd: true,
+      },
+      draggable: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
