@@ -27,6 +27,9 @@ import { CalendarComponent } from './view/calendar/calendar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
+import { CongeComponent } from './view/conge/conge.component';
+import { DemandeAdministratifComponent } from './view/demande-administratif/demande-administratif.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { AddemployeeComponent } from './view/addemployee/addemployee.component';
     JobsComponent,
     CalendarComponent,
     DepartementComponent,
-    AddemployeeComponent
+    AddemployeeComponent,
+    CongeComponent,
+    DemandeAdministratifComponent
   ],
   imports: [
     BrowserModule,
