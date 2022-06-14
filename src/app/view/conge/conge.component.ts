@@ -13,10 +13,11 @@ export class CongeComponent implements OnInit {
   }
   ok(){
     Swal.fire({
-      title: 'Do you want to save the changes?',
+      title: 'vous-étes sûrs ?',
       
       showCancelButton: true,
-      confirmButtonText: 'Save',
+      confirmButtonText: 'Oui',
+      cancelButtonText:'Non',
       
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */

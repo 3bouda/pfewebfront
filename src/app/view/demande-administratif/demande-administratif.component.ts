@@ -13,12 +13,9 @@ export class DemandeAdministratifComponent implements OnInit {
   }
   ok(){
     Swal.fire({
-      title: '<strong>HTML <u>example</u></strong>',
-      icon: 'info',
+      title: '<strong>Autorisation </strong>',
       html:
-        'You can use <b>bold text</b>, ' +
-        '<a href="//sweetalert2.github.io">links</a> ' +
-        'and other HTML tags',
+        ' <p>Bonjour, je demande une autorisation de 2 heures le 13/06 de 14h à 16h pour des obligations familiales.  </> ' ,
       showCloseButton: true,
       
       focusConfirm: false,

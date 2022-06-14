@@ -59,3 +59,6 @@ h4 {
     margin: 0 3px;
     background-color: #ccc;
 }
+.activity-leval li.noactive {
+    background-color: #d82e2e;
+}
