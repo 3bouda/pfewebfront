@@ -6,6 +6,7 @@ import { EmployeesComponent } from './view/employees/employees.component';
 import { HomeComponent } from './view/home/home.component';
 import { JobsComponent } from './view/jobs/jobs.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ClientComponent } from './view/client/client.component';
 import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 import { CongeComponent } from './view/conge/conge.component';
@@ -16,13 +17,14 @@ const routes: Routes = [
   { path: 'jobs', component: JobsComponent},
   { path: 'departement', component: DepartementComponent},
   { path: 'calendar', component: CalendarComponent},
+  { path: 'client', component: ClientComponent},
 
   { path: 'creatjob', component: CreatjobComponent},
   { path: 'employees', component: EmployeesComponent},
   { path: 'addemployee', component: AddemployeeComponent},
   { path: 'congé', component: CongeComponent},
   { path: 'demande', component: DemandeAdministratifComponent},
- 
+
 ];
 
 @NgModule({

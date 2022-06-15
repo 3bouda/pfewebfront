@@ -29,6 +29,7 @@ import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 import { CongeComponent } from './view/conge/conge.component';
 import { DemandeAdministratifComponent } from './view/demande-administratif/demande-administratif.component';
+import { ClientComponent } from './view/client/client.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { DemandeAdministratifComponent } from './view/demande-administratif/dema
     DepartementComponent,
     AddemployeeComponent,
     CongeComponent,
-    DemandeAdministratifComponent
+    DemandeAdministratifComponent,
+    ClientComponent
   ],
   imports: [
     BrowserModule,

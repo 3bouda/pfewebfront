@@ -1,0 +1,42 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div style="margin-top: 20px;" class="container" cdkDropListGroup>
+
+  <div class="example-container" *ngFor="let list of projectLists">
+    <h2 style="text-align:center;">{{list.projectName}}</h2>
+
+
+    <div
+      cdkDropList
+      id="{{list.projectName}}"
+      [cdkDropListData]="list.products"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+    <button (click)="add()" class="example">
+      <i class="fa fa-duotone fa-plus"></i>
+    </button>
+
+
+      <div
+        *ngFor="let product of list.products"
+        class="example-box"
+        cdkDrag
+        [class.item__moved]="product.originalProjectName !== list.projectName"
+      >
+
+        <!-- {{product.logo}} -->
+        <mat-card class="example-card" style="box-shadow: none;padding:0%;">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image" style="background-image: url('{{product.logo}}');"></div>
+            <mat-card-title>{{product.productName}}</mat-card-title>
+            <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

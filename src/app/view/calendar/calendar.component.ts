@@ -6,7 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 const colors: any = {
   red: {
-    primary: '#ad2121',
+    primary: 'red',
     secondary: '#FAE3E3',
   },
   blue: {
@@ -161,6 +161,7 @@ export class CalendarComponent  {
         end: endOfDay(new Date()),
         color: colors.red,
         draggable: true,
+        actions: this.actions,
         resizable: {
           beforeStart: true,
           afterEnd: true,
