@@ -1,9 +1,14 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef} from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, ElementRef} from '@angular/core';
 import {startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours} from 'date-fns';
 import { Subject } from 'rxjs';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView} from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {map, startWith} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import { FormControl } from '@angular/forms';
 const colors: any = {
   red: {
     primary: 'red',
@@ -26,7 +31,53 @@ const colors: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CalendarComponent  {
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  fruitCtrl = new FormControl('');
+  filteredFruits: Observable<string[]>;
+  fruits: string[] = [''];
+  allFruits: string[] = ['Iheb', 'Semah', 'Wael', 'Nejd', 'Nadine'];
 
+  @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> | undefined;
+  constructor(private modal: NgbModal) {
+    this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
+      startWith(null),
+      map((fruit: string | null) => (fruit ? this._filter(fruit) : this.allFruits.slice())),
+    );
+  }
+
+  add(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+
+    // Add our fruit
+    if (value) {
+      this.fruits.push(value);
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+
+    this.fruitCtrl.setValue(null);
+  }
+
+  remove(fruit: string): void {
+    const index = this.fruits.indexOf(fruit);
+
+    if (index >= 0) {
+      this.fruits.splice(index, 1);
+    }
+  }
+
+  selected(event: MatAutocompleteSelectedEvent): void {
+    this.fruits.push(event.option.viewValue);
+    this.fruitInput!.nativeElement.value = '';
+    this.fruitCtrl.setValue(null);
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.allFruits.filter(fruit => fruit.toLowerCase().includes(filterValue));
+  }
    @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -86,7 +137,7 @@ export class CalendarComponent  {
       draggable: true,
     },
     {
-      start: subDays(endOfMonth(new Date()), 3),
+      start: subDays(endOfMonth(new Date()), 4),
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
       color: colors.blue,
@@ -113,7 +164,6 @@ export class CalendarComponent  {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

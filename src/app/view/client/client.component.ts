@@ -23,38 +23,36 @@ export class ClientComponent implements OnInit {
       {
         projectName: 'Prospect',
         products: [
-          { originalProjectName: 'ProjectA', productName: 'Drill A1' ,logo:'../../../assets/Al-Khatt.jpeg', description:'Responsable societé'},
-          { originalProjectName: 'ProjectA', productName: 'Saw A1',logo:'../../../assets/BAIC-YX.jpeg', description:'Responsable societé' },
+
+          { originalProjectName: 'ProjectA', productName: 'Saw A1',logo:'../../../assets/BAIC-YX.jpeg', description:'Alaa' },
         ],
       },
       {
         projectName: 'Lead',
         products: [
-          { originalProjectName: 'ProjectB', productName: 'Scrap',logo:'../../../assets/Crystal-Ind.jpeg', description:'Responsable societé' },
-          { originalProjectName: 'ProjectB', productName: 'Drill A3',logo:'../../../assets/CS.jpeg', description:'Responsable societé' },
-          { originalProjectName: 'ProjectB', productName: 'Drill A4',logo:'../../../assets/ENA.png', description:'Responsable societé' },
+          { originalProjectName: 'ProjectB', productName: 'Scrap',logo:'../../../assets/Crystal-Ind.jpeg', description:'Iheb' },
+
         ],
       },
       {
         projectName: 'Engaged',
         products: [
-          { originalProjectName: 'ProjectC', productName: 'Electric Motor A1' ,logo:'../../../assets/GI.png', description:'Responsable societé'},
-          { originalProjectName: 'ProjectC', productName: 'Pump A1' ,logo:'../../../assets/HAI.png', description:'Responsable societé'},
+          { originalProjectName: 'ProjectC', productName: 'Electric ' ,logo:'../../../assets/GI.png', description:'Ahmed'},
+
         ],
       },
       {
         projectName: 'Negociation',
         products: [
-          { originalProjectName: 'ProjectA', productName: 'Drill A1' ,logo:'../../../assets/hcv_hbs_logo.jpg', description:'Responsable societé'},
+          { originalProjectName: 'ProjectA', productName: 'Drill A1' ,logo:'../../../assets/Al-Khatt.jpeg', description:'Sami'},
         ],
       },
       {
         projectName: 'Signed',
         products: [
-          { originalProjectName: 'ProjectA', productName: 'Drill A1',logo:'../../../assets/IMS.png', description:'Responsable societé' },
-          { originalProjectName: 'ProjectA', productName: 'Saw A1',logo:'../../../assets/Taysir-Conseil.jpeg', description:'Responsable societé' },
-          { originalProjectName: 'ProjectA', productName: 'Container A1' ,logo:'../../../assets/Jamaity.jpeg', description:'Responsable societé'},
-          { originalProjectName: 'ProjectA', productName: 'Drill A2',logo:'../../../assets/UGTT.jpeg', description:'Responsable societé' },
+
+          { originalProjectName: 'ProjectC', productName: 'Pump A1' ,logo:'../../../assets/HAI.png', description:'Responsable societé'},
+
         ],
       },
     ];
