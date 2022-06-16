@@ -1,37 +1,87 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5">  <button class="addimage" (click)="uploader.click()"><input hidden type="file" #uploader /><img  class="rounded-circle mt-5" width="150px" src="../../../assets/alaa.jpg"></button><span> </span></div>
-        </div>
-        <form class="col-md-9 ">
-        <div class="col-md-10 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Paramètres du profil</h4>
-                </div>
-            
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" placeholder="Nom" value=""></div>
-                    <div class="col-md-6"><label class="labels">prenom</label><input type="text" class="form-control" value="" placeholder="Prenom"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Numero tel</label><input type="text" class="form-control" placeholder="enter Numero tel" value=""></div>
-                    <div class="col-md-12"><label class="labels">CIN</label><input type="text" class="form-control" placeholder="enter CIN" value=""></div>
-                    <div class="col-md-12"><label class="labels">Addresse </label><input type="text" class="form-control" placeholder="enter addresse" value=""></div>
-                    <div class="col-md-12"><label class="labels">e-mail</label><input type="text" class="form-control" placeholder="enter e-mail" value=""></div>
-                    <div class="col-md-12"><label class="labels">Mot De Passe</label><input type="text" class="form-control" placeholder="enter Mot De Passe" value=""></div>
-
-                </div>
-                <div class="row mt-3">
-                     <div class="col-md-6"><label class="labels">C.V</label><input type="file"   value=""></div>
-                     <div class="col-md-6"><label class="labels">Video</label><input type="file"   value=""></div>
-                    
-                </div>
-                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Ajouter</button></div>
-            </div>
-        </div>
-    </form>
-    
+  <div class="row">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5"> <button class="addimage"
+          (click)="uploader.click()"><input hidden type="file" #uploader /><img class="rounded-circle mt-5"
+            width="150px" src="../../../assets/newemployee.png"></button><span> </span>
+      </div>
     </div>
+    <form class="col-md-9 ">
+      <div class="col-md-10 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1 class="text-right">Ajouter un employer</h1>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <label class="labels">
+                Nom
+              </label>
+              <input type="text" class="form-control" placeholder="Nom" value="">
+            </div>
+            <div class="col-md-6">
+              <label class="labels">
+                prenom
+              </label>
+              <input type="text" class="form-control" value="" placeholder="Prenom">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <label class="labels">
+                Numero tel
+              </label>
+              <input type="text" class="form-control" placeholder="enter Numero tel" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels">
+                CIN
+              </label>
+              <input type="text" class="form-control" placeholder="enter CIN" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels">
+                Addresse
+               </label>
+               <input type="text" class="form-control" placeholder="enter addresse" value="">
+              </div>
+            <div class="col-md-12">
+              <label class="labels">
+                e-mail
+              </label>
+              <input type="text" class="form-control" placeholder="enter e-mail" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="labels">
+                Mot De Passe
+              </label>
+              <input type="text" class="form-control" placeholder="enter Mot De Passe" value="">
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6">
+              <label class="labels">
+                C.V
+              </label>
+              <input type="file" value="">
+            </div>
+            <div class="col-md-6">
+              <label class="labels">
+                Video
+              </label>
+              <input type="file" value="">
+            </div>
+
+          </div>
+          <div class="mt-5 text-center">
+            <button class="btn btn-primary profile-button" type="button">
+              Ajouter
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+  </div>
 </div>

@@ -1,23 +1,27 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
 <div class="container ">
- <div class="row">
-   <div (click)="goToAdd()" class="items col-md-3 ">
+  <div class="row">
+
+
+    <div (click)="goToAdd()" class="items col-md-3 ">
       <div class="icon-wrapper">
         <i class="fa fa-duotone fa-plus"></i>
       </div>
       <div class="project-name">
-        <p>Add service</p>
+        <p> Département</p>
       </div>
     </div>
-   <div  (click)="goToService()" class="items col-md-3 offset-md-1 ">
+
+    <!-- <div class="items col-md-3 offset-md-1 ">
       <div class="icon-wrapper">
         <i class="fa fa-file-text-o"></i>
       </div>
       <div class="project-name">
-        <p>Devlopement</p>
+        <p>Devlopementt</p>
       </div>
     </div>
+
     <div class="items col-md-3 offset-md-1 ">
       <div class="icon-wrapper">
         <i class="fa fa-file-text-o"></i>
@@ -25,9 +29,17 @@
       <div class="project-name">
         <p>Réseau</p>
       </div>
+    </div> -->
+
+    <div *ngFor="let departement of departements" class="items col-md-3 offset-md-1 ">
+      <div (click)="goToDepartement(departement.id)">
+        <div class="icon-wrapper">
+          <i class="fa fa-file-text-o"></i>
+        </div>
+        <div class="project-name">
+          <p>{{departement.nom}}</p>
+        </div>
+      </div>
     </div>
   </div>
-  </div>
-  
-
-  
+</div>
