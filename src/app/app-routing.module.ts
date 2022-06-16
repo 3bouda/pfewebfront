@@ -10,15 +10,24 @@ import { CongeComponent } from './view/conge/conge.component';
 import { DemandeAdministratifComponent } from './view/demande-administratif/demande-administratif.component';
 import { AjouterDepartementComponent } from './view/ajouter-departement/ajouter-departement.component';
 import { DepartementsComponent } from './view/departements/departements.component';
+import { CandidatComponent } from './view/candidat/candidat.component';
+import { CandidatsComponent } from './view/candidats/candidats.component';
+import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
+
   { path: 'departements', component: DepartementsComponent},
   { path: 'ajouterDepartement', component: AjouterDepartementComponent },
-
   { path: 'departement/:id', component: DepartementComponent},
+
   { path: 'employee/:id', component: EmployeComponent},
-  { path: 'addemployee/:idDepartement', component: AddemployeeComponent},
+  { path: 'addemployee/:id', component: AddemployeeComponent},
+
+  { path: 'candidats', component: CandidatsComponent},
+  { path: 'candidat/:id', component: CandidatComponent},
+  { path: 'addcandidat', component: AddcandidatComponent},
+
 
   { path: 'calendar', component: CalendarComponent},
   { path: 'client', component: ClientComponent},

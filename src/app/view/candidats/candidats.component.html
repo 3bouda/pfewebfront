@@ -1,0 +1,44 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+
+        <button (click)="goToAddCandidat()" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein"
+        data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a" style="margin-top: 10px;">
+        <i class="mdi mdi-plus"></i>
+        Add Member
+      </button>
+      </div>
+      <!-- end col -->
+    </div>
+    <div class="row">
+
+<!-- whatdafuk -->
+
+
+    </div>
+    <!-- end row -->
+    <div class="row">
+      <div class="col-12">
+        <div class="text-right">
+          <ul class="pagination pagination-split mt-0 float-right">
+            <li class="page-item"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span>
+                <span class="sr-only">Previous</span></a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span>
+                <span class="sr-only">Next</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- container -->
+</div>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+</mat-paginator>

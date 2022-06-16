@@ -14,16 +14,12 @@ import { Employe } from 'src/app/models/employe';
 export class AddemployeeComponent implements OnInit {
   file:any;
 
-  identifiant!: string;
-
   employe: Employe[] = [];
   employeForm!:FormGroup;
 
   constructor(private fb:FormBuilder, private employeService : EmployeeService ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.identifiant = this.activatedRoute.snapshot.params['id'];
-
     this.employeForm=this.fb.group({
       departementId:"ssssss",
 
@@ -51,7 +47,7 @@ export class AddemployeeComponent implements OnInit {
       timer: 3000
     });
     //this.employeForm.controls['image'].setValue(this.file);
-    this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['idDepartement']);
+    this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['id']);
     this.employeForm.controls['etat'].setValue("congé");
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
     console.log(this.employeForm.value)

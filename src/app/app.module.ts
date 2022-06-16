@@ -31,6 +31,8 @@ import { AjouterDepartementComponent } from './view/ajouter-departement/ajouter-
 import { DepartementsComponent } from './view/departements/departements.component';
 import { CandidatComponent } from './view/candidat/candidat.component';
 import { EmployeComponent } from './view/employe/employe.component';
+import { CandidatsComponent } from './view/candidats/candidats.component';
+import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { EmployeComponent } from './view/employe/employe.component';
     AjouterDepartementComponent,
     DepartementsComponent,
     CandidatComponent,
-    EmployeComponent
+    EmployeComponent,
+    CandidatsComponent,
+    AddcandidatComponent
   ],
   imports: [
     BrowserModule,
