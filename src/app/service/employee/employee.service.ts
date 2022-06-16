@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Employe } from 'src/app/models/employe';
 
 const URL = "http://localhost:8080/employee"
@@ -14,19 +14,27 @@ export class EmployeeService {
   getAll(){
     return this.http.get(`${URL}`);
   }
+  getEmploye(id:string){
+    return this.http.get(`${URL}/${id}`);
+  }
   create(employee:Employe){
-    let params = new HttpParams().set("file",employee.imageUrl!)
-                                 .set("nom",employee.nom!)
-                                 .set("prenom",employee.prenom!)
-                                 .set("tel",employee.tel!)
-                                 .set("email",employee.email!)
-                                 .set("adresse",employee.adresse!)
-                                 .set("motDePasse",employee.motDePasse!)
-                                 .set("etat","congé")
-                                 .set("CIN",employee.CIN!)
-                                 .set("departementId",employee.departementId!)
+    let formData:FormData = new FormData();
+    formData.append('file',employee.image!, employee.image!.name);
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
 
-    return this.http.get(`${URL}`,{params});
+    let params = new HttpParams();
+  params.append("nom",employee.nom!)
+  params.append("prenom",employee.prenom!)
+  params.append("tel",employee.tel!)
+  params.append("email",employee.email!)
+  params.append("adresse",employee.adresse!)
+  params.append("motDePasse",employee.motDePasse!)
+  params.append("etat",employee.etat!)
+  params.append("CIN",employee.cin!)
+  params.append("departementId",employee.departementId!)
+    return this.http.post(`${URL}`,formData,{headers: headers, params: params});
   }
   delete(id:string){
     return this.http.delete(`${URL}/${id}`);

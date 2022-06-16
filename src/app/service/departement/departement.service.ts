@@ -12,6 +12,10 @@ export class DepartementService {
   getAll(){
     return this.http.get(`${URL}`);
   }
+  getDepartement(id:string){
+    return this.http.get(`${URL}/${id}`);
+  }
+
   create(departement:any){
     return this.http.post(`${URL}`,departement);
   }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './view/calendar/calendar.component';
-import { EmployeesComponent } from './view/employees/employees.component';
+import { EmployeComponent } from './view/employe/employe.component';
 import { HomeComponent } from './view/home/home.component';
 import { ClientComponent } from './view/client/client.component';
 import { DepartementComponent } from './view/departement/departement.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'ajouterDepartement', component: AjouterDepartementComponent },
 
   { path: 'departement/:id', component: DepartementComponent},
-  { path: 'employees', component: EmployeesComponent},
+  { path: 'employee/:id', component: EmployeComponent},
   { path: 'addemployee/:idDepartement', component: AddemployeeComponent},
 
   { path: 'calendar', component: CalendarComponent},

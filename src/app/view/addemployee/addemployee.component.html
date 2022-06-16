@@ -67,7 +67,7 @@
               <label class="labels">
                 C.V
               </label>
-              <input type="file" value="" formControlName="imageUrl">
+              <input type="file" (change)="upload($event)" formControlName="image">
             </div>
             <div class="col-md-6">
               <label class="labels">

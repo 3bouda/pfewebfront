@@ -12,6 +12,8 @@ import { Employe } from 'src/app/models/employe';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent implements OnInit {
+  file:any;
+
   identifiant!: string;
 
   employe: Employe[] = [];
@@ -23,8 +25,7 @@ export class AddemployeeComponent implements OnInit {
     this.identifiant = this.activatedRoute.snapshot.params['id'];
 
     this.employeForm=this.fb.group({
-      id:null,
-      departementId:this.identifiant,
+      departementId:"ssssss",
 
       nom:"",
       prenom:"",
@@ -36,7 +37,7 @@ export class AddemployeeComponent implements OnInit {
       CIN:"",
       etat:"",
 
-      imageUrl:"",
+      image:"",
     })
   }
   getAll(){
@@ -49,10 +50,19 @@ export class AddemployeeComponent implements OnInit {
       showConfirmButton: false,
       timer: 3000
     });
+    //this.employeForm.controls['image'].setValue(this.file);
+    this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['idDepartement']);
+    this.employeForm.controls['etat'].setValue("congé");
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
+    console.log(this.employeForm.value)
+
     }
     onSubmit(u:any){
       console.log(u)
 
+    }
+    upload($event:any){
+      this.file = $event.target.files[0];
+      console.log(this.file)
     }
 }

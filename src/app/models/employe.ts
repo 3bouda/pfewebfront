@@ -11,8 +11,9 @@ export class Employe{
     public adresse?:string,
 
     public motDePasse?:string,
-    public CIN?:string,
+    public cin?:string,
     public etat?:string,
+    public image?:File,
 
     public imageUrl?:string
   ){}
