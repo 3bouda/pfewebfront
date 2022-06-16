@@ -7,7 +7,10 @@
             width="150px" src="../../../assets/newemployee.png"></button><span> </span>
       </div>
     </div>
-    <form class="col-md-9 ">
+
+
+
+    <form class="col-md-9 " [formGroup]="employeForm" (ngSubmit)="creat()">
       <div class="col-md-10 border-right">
         <div class="p-3 py-5">
           <div class="d-flex justify-content-between align-items-center mb-3">
@@ -18,13 +21,13 @@
               <label class="labels">
                 Nom
               </label>
-              <input type="text" class="form-control" placeholder="Nom" value="">
+              <input type="text" class="form-control" placeholder="Nom" formControlName="nom" value="">
             </div>
             <div class="col-md-6">
               <label class="labels">
                 prenom
               </label>
-              <input type="text" class="form-control" value="" placeholder="Prenom">
+              <input type="text" class="form-control" value="" placeholder="Prenom" formControlName="prenom">
             </div>
           </div>
           <div class="row mt-3">
@@ -32,31 +35,31 @@
               <label class="labels">
                 Numero tel
               </label>
-              <input type="text" class="form-control" placeholder="enter Numero tel" value="">
+              <input type="text" class="form-control" placeholder="enter Numero tel" value="" formControlName="tel">
             </div>
             <div class="col-md-12">
               <label class="labels">
                 CIN
               </label>
-              <input type="text" class="form-control" placeholder="enter CIN" value="">
+              <input type="text" class="form-control" placeholder="enter CIN" value="" formControlName="CIN">
             </div>
             <div class="col-md-12">
               <label class="labels">
                 Addresse
-               </label>
-               <input type="text" class="form-control" placeholder="enter addresse" value="">
-              </div>
+              </label>
+              <input type="text" class="form-control" placeholder="enter addresse" value="" formControlName="adresse">
+            </div>
             <div class="col-md-12">
               <label class="labels">
                 e-mail
               </label>
-              <input type="text" class="form-control" placeholder="enter e-mail" value="">
+              <input type="text" class="form-control" placeholder="enter e-mail" value="" formControlName="email">
             </div>
             <div class="col-md-12">
               <label class="labels">
                 Mot De Passe
               </label>
-              <input type="text" class="form-control" placeholder="enter Mot De Passe" value="">
+              <input type="text" class="form-control" placeholder="enter Mot De Passe" value="" formControlName="motDePasse">
             </div>
           </div>
           <div class="row mt-3">
@@ -64,7 +67,7 @@
               <label class="labels">
                 C.V
               </label>
-              <input type="file" value="">
+              <input type="file" value="" formControlName="imageUrl">
             </div>
             <div class="col-md-6">
               <label class="labels">
@@ -75,7 +78,7 @@
 
           </div>
           <div class="mt-5 text-center">
-            <button class="btn btn-primary profile-button" type="button">
+            <button class="btn btn-primary profile-button" type="submit">
               Ajouter
             </button>
           </div>

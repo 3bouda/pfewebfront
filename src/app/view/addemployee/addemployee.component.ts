@@ -24,7 +24,7 @@ export class AddemployeeComponent implements OnInit {
 
     this.employeForm=this.fb.group({
       id:null,
-      departementId:"",
+      departementId:this.identifiant,
 
       nom:"",
       prenom:"",
@@ -42,5 +42,17 @@ export class AddemployeeComponent implements OnInit {
   getAll(){
     this.employeService.getAll().subscribe((data: any) => this.employe = data)
   }
+  async creat(){
+    Swal.fire({
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
+    }
+    onSubmit(u:any){
+      console.log(u)
 
+    }
 }
