@@ -1,6 +1,5 @@
 export class Employe{
   constructor(
-
     public id?:string,
     public departementId?:string,
 
@@ -13,8 +12,13 @@ export class Employe{
     public motDePasse?:string,
     public cin?:string,
     public etat?:string,
+    
+    public vid?:File,
+    public cv?:File,
     public image?:File,
 
-    public imageUrl?:string
+    public imageUrl?:string,
+    public cvUrl?:string,
+    public vidUrl?:string,
   ){}
 }

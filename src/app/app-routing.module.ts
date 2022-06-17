@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CalendarComponent } from './view/calendar/calendar.component';
 import { EmployeComponent } from './view/employe/employe.component';
 import { HomeComponent } from './view/home/home.component';
 import { ClientComponent } from './view/client/client.component';
@@ -13,6 +12,8 @@ import { DepartementsComponent } from './view/departements/departements.componen
 import { CandidatComponent } from './view/candidat/candidat.component';
 import { CandidatsComponent } from './view/candidats/candidats.component';
 import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
+import { EntretienComponent } from './view/entretien/entretien.component';
+import { ReunionComponent } from './view/reunion/reunion.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -29,7 +30,10 @@ const routes: Routes = [
   { path: 'addcandidat', component: AddcandidatComponent},
 
 
-  { path: 'calendar', component: CalendarComponent},
+  { path: 'entretien', component: EntretienComponent},
+  { path: 'reunion', component: ReunionComponent},
+
+
   { path: 'client', component: ClientComponent},
 
   { path: 'congé', component: CongeComponent},

@@ -4,11 +4,13 @@
     <mat-nav-list>
       <a mat-list-item [routerLink]="['home']" (click)="sidenav.toggle()">Home</a>
       <a mat-list-item [routerLink]="['departements']" (click)="sidenav.toggle()">Départements</a>
-      <a mat-list-item [routerLink]="['calendar']" (click)="sidenav.toggle()">calendar</a>
+      <a mat-list-item [routerLink]="['reunion']" (click)="sidenav.toggle()">Réunion</a>
+      <a mat-list-item [routerLink]="['entretien']" (click)="sidenav.toggle()">Entretien</a>
+
       <a mat-list-item [routerLink]="['client']" (click)="sidenav.toggle()">Client</a>
       <a mat-list-item [routerLink]="['congé']" (click)="sidenav.toggle()">Congé</a>
-      <a mat-list-item [routerLink]="['candidats']" (click)="sidenav.toggle()">Les candidats</a>
       <a mat-list-item [routerLink]="['demande']" (click)="sidenav.toggle()">Demande Administratif</a>
+      <a mat-list-item [routerLink]="['candidats']" (click)="sidenav.toggle()">Candidats</a>
 
     </mat-nav-list>
   </mat-sidenav>

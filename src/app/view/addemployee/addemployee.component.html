@@ -67,13 +67,19 @@
               <label class="labels">
                 C.V
               </label>
-              <input type="file" (change)="upload($event)" formControlName="image">
+              <input type="file" (change)="uploadCV($event)" >
             </div>
             <div class="col-md-6">
               <label class="labels">
                 Video
               </label>
-              <input type="file" value="">
+              <input type="file" (change)="uploadVideo($event)">
+            </div>
+            <div class="col-md-6">
+              <label class="labels">
+                Image
+              </label>
+              <input type="file" (change)="uploadImage($event)">
             </div>
 
           </div>

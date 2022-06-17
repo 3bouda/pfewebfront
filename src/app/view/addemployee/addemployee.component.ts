@@ -12,7 +12,9 @@ import { Employe } from 'src/app/models/employe';
   styleUrls: ['./addemployee.component.css']
 })
 export class AddemployeeComponent implements OnInit {
-  file:any;
+  image!:File;
+  cv!:File;
+  vid!:File;
 
   employe: Employe[] = [];
   employeForm!:FormGroup;
@@ -32,7 +34,8 @@ export class AddemployeeComponent implements OnInit {
       motDePasse:"",
       CIN:"",
       etat:"",
-
+      cv:"",
+      vid:"",
       image:"",
     })
   }
@@ -46,7 +49,6 @@ export class AddemployeeComponent implements OnInit {
       showConfirmButton: false,
       timer: 3000
     });
-    //this.employeForm.controls['image'].setValue(this.file);
     this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['id']);
     this.employeForm.controls['etat'].setValue("congé");
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
@@ -57,8 +59,19 @@ export class AddemployeeComponent implements OnInit {
       console.log(u)
 
     }
-    upload($event:any){
-      this.file = $event.target.files[0];
-      console.log(this.file)
+    uploadImage($event?:any){
+      this.image = $event.target.files[0];
+      this.employeForm.controls['image'].setValue(this.image);
+
+    }
+    uploadCV($event?:any){
+      this.cv = $event.target.files[0];
+      this.employeForm.controls['cv'].setValue(this.cv);
+
+    }
+    uploadVideo($event?:any){
+      this.vid = $event.target.files[0];
+      this.employeForm.controls['vid'].setValue(this.vid);
+
     }
 }

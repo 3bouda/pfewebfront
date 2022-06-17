@@ -20,7 +20,6 @@ import { getDatabase } from '@firebase/database';
 
 import { NavComponent } from './view/nav/nav.component';
 import { HomeComponent } from './view/home/home.component';
-import { CalendarComponent } from './view/calendar/calendar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
@@ -33,6 +32,8 @@ import { CandidatComponent } from './view/candidat/candidat.component';
 import { EmployeComponent } from './view/employe/employe.component';
 import { CandidatsComponent } from './view/candidats/candidats.component';
 import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
+import { EntretienComponent } from './view/entretien/entretien.component';
+import { ReunionComponent } from './view/reunion/reunion.component';
 
 
 @NgModule({
@@ -40,7 +41,6 @@ import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
     AppComponent,
     NavComponent,
     HomeComponent,
-    CalendarComponent,
     DepartementComponent,
     AddemployeeComponent,
     CongeComponent,
@@ -51,7 +51,9 @@ import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
     CandidatComponent,
     EmployeComponent,
     CandidatsComponent,
-    AddcandidatComponent
+    AddcandidatComponent,
+    EntretienComponent,
+    ReunionComponent
   ],
   imports: [
     BrowserModule,

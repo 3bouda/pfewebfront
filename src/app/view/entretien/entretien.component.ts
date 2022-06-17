@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, ElementRef} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef, ElementRef } from '@angular/core';
 import {startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours} from 'date-fns';
 import { Subject } from 'rxjs';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView} from 'angular-calendar';
@@ -9,6 +9,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {map, startWith} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import { FormControl } from '@angular/forms';
+
 const colors: any = {
   red: {
     primary: 'red',
@@ -25,12 +26,13 @@ const colors: any = {
 };
 
 @Component({
-  selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css'],
+  selector: 'app-entretien',
+  templateUrl: './entretien.component.html',
+  styleUrls: ['./entretien.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
-export class CalendarComponent  {
+export class EntretienComponent implements OnInit {
   separatorKeysCodes: number[] = [ENTER, COMMA];
   fruitCtrl = new FormControl('');
   filteredFruits: Observable<string[]>;
@@ -38,6 +40,7 @@ export class CalendarComponent  {
   allFruits: string[] = ['Iheb', 'Semah', 'Wael', 'Nejd', 'Nadine'];
 
   @ViewChild('fruitInput') fruitInput: ElementRef<HTMLInputElement> | undefined;
+
   constructor(private modal: NgbModal) {
     this.filteredFruits = this.fruitCtrl.valueChanges.pipe(
       startWith(null),
@@ -45,6 +48,8 @@ export class CalendarComponent  {
     );
   }
 
+  ngOnInit(): void {
+  }
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
@@ -231,4 +236,5 @@ export class CalendarComponent  {
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
+
 }

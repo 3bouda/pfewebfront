@@ -20,21 +20,18 @@ export class EmployeeService {
   create(employee:Employe){
     let formData:FormData = new FormData();
     formData.append('file',employee.image!, employee.image!.name);
-    let headers = new HttpHeaders();
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', 'application/json');
+    formData.append("nom",employee.nom!);
+    formData.append("prenom",employee.prenom!);
+    formData.append("tel",employee.tel!);
+    formData.append("email",employee.email!);
+    formData.append("adresse",employee.adresse!);
+    formData.append("motDePasse",employee.motDePasse!);
+    formData.append("etat",employee.etat!);
+    formData.append("CIN",employee.cin!);
+    formData.append("departementId",employee.departementId!);
 
-    let params = new HttpParams();
-  params.append("nom",employee.nom!)
-  params.append("prenom",employee.prenom!)
-  params.append("tel",employee.tel!)
-  params.append("email",employee.email!)
-  params.append("adresse",employee.adresse!)
-  params.append("motDePasse",employee.motDePasse!)
-  params.append("etat",employee.etat!)
-  params.append("CIN",employee.cin!)
-  params.append("departementId",employee.departementId!)
-    return this.http.post(`${URL}`,formData,{headers: headers, params: params});
+
+    return this.http.post(`${URL}`,formData);
   }
   delete(id:string){
     return this.http.delete(`${URL}/${id}`);

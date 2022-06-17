@@ -37,7 +37,7 @@ export class AjouterDepartementComponent implements OnInit {
       icon: 'success',
       title: 'Your work has been saved',
       showConfirmButton: false,
-      timer: 3000
+      timer: 1000
     });
     this.departementService.create(this.departementForm.value).subscribe(() => this.getAll());
     this.router.navigate(['/departements']);  }

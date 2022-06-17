@@ -7,16 +7,34 @@
         <button (click)="goToAddCandidat()" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein"
         data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a" style="margin-top: 10px;">
         <i class="mdi mdi-plus"></i>
-        Add Member
+        Ajouter candidat
       </button>
       </div>
       <!-- end col -->
     </div>
     <div class="row">
 
-<!-- whatdafuk -->
-
-
+      <div class="col-lg-4" *ngFor="let candidat of candidats">
+          <div class="text-center card-box">
+            <div class="member-card pt-2 pb-2">
+               <div class="thumb-lg member-thumb mx-auto "><img src="../../../assets/newemployee.png"
+                  class="rounded-circle img-thumbnail" alt="profile-image"></div>
+              <div class="">
+                <h4>{{candidat.nom}} {{candidat.prenom}} </h4>
+                <p class="text-muted"><span><a href="#" class="text-pink">{{candidat.email}} </a></span></p>
+              </div>
+              <button (click)="goToCandidat(candidat.id)" type="button"
+                class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">See More</button>
+              <ul class="list-unstyled activity-leval">
+                <li class="noactive"></li>
+                <li class="noactive"></li>
+                <li class="noactive"></li>
+                <li></li>
+                <li></li>
+              </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- end row -->
     <div class="row">
@@ -42,3 +60,4 @@
 </div>
 <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
 </mat-paginator>
+{{candidats | json}}
