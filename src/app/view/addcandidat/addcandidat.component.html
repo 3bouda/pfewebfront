@@ -50,6 +50,12 @@
               <input type="text" class="form-control" placeholder="enter addresse" formControlName="adresse">
             </div>
           </div>
+          <div class="col-md-6">
+            <label class="labels">
+              C.V
+            </label>
+            <input type="file" (change)="uploadCV($event)" >
+          </div>
 
           <div class="mt-5 text-center">
             <button class="btn btn-primary profile-button" type="submit">

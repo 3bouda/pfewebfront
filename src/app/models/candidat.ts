@@ -7,5 +7,9 @@ export class Candidat{
     public tel?:string,
     public email?:string,
     public adresse?:string,
+
+    public cv?:File,
+    public cvUrl?:string
+
   ){}
 }

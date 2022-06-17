@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder,  FormGroup } from '@angular/forms';
 import { EmployeeService } from 'src/app/service/employee/employee.service';
+import { Router } from '@angular/router';
+
 
 import Swal from 'sweetalert2';
 import { Employe } from 'src/app/models/employe';
@@ -19,11 +21,11 @@ export class AddemployeeComponent implements OnInit {
   employe: Employe[] = [];
   employeForm!:FormGroup;
 
-  constructor(private fb:FormBuilder, private employeService : EmployeeService ,private activatedRoute: ActivatedRoute) { }
+  constructor(public router:Router,private fb:FormBuilder, private employeService : EmployeeService ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.employeForm=this.fb.group({
-      departementId:"ssssss",
+      departementId:"",
 
       nom:"",
       prenom:"",
@@ -42,6 +44,7 @@ export class AddemployeeComponent implements OnInit {
   getAll(){
     this.employeService.getAll().subscribe((data: any) => this.employe = data)
   }
+
   async creat(){
     Swal.fire({
       icon: 'success',
@@ -52,13 +55,9 @@ export class AddemployeeComponent implements OnInit {
     this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['id']);
     this.employeForm.controls['etat'].setValue("congé");
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
-    console.log(this.employeForm.value)
-
+    this.router.navigate(['/candidats']);
     }
-    onSubmit(u:any){
-      console.log(u)
 
-    }
     uploadImage($event?:any){
       this.image = $event.target.files[0];
       this.employeForm.controls['image'].setValue(this.image);
@@ -69,9 +68,9 @@ export class AddemployeeComponent implements OnInit {
       this.employeForm.controls['cv'].setValue(this.cv);
 
     }
-    uploadVideo($event?:any){
-      this.vid = $event.target.files[0];
-      this.employeForm.controls['vid'].setValue(this.vid);
+    // uploadVideo($event?:any){
+    //   this.vid = $event.target.files[0];
+    //   this.employeForm.controls['vid'].setValue(this.vid);
 
-    }
+    // }
 }

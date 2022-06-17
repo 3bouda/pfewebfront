@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Employe } from 'src/app/models/employe';
 
 const URL = "http://localhost:8080/employee"
@@ -19,7 +19,9 @@ export class EmployeeService {
   }
   create(employee:Employe){
     let formData:FormData = new FormData();
-    formData.append('file',employee.image!, employee.image!.name);
+    formData.append('cv',employee.cv!, employee.cv!.name);
+    formData.append('image',employee.image!, employee.image!.name);
+ // formData.append('vid',employee.vid!, employee.vid!.name);
     formData.append("nom",employee.nom!);
     formData.append("prenom",employee.prenom!);
     formData.append("tel",employee.tel!);

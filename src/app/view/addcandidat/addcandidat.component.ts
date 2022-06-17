@@ -14,6 +14,9 @@ import Swal from 'sweetalert2';
 export class AddcandidatComponent implements OnInit {
   candidat: Candidat[] = [];
   candidatForm!:FormGroup;
+
+  cv!:File;
+
   constructor(public router:Router,private fb:FormBuilder, private candidatService : CandidatService) { }
 
   ngOnInit(): void {
@@ -25,6 +28,7 @@ export class AddcandidatComponent implements OnInit {
       tel:"",
       email:"",
       adresse:"",
+      cv:""
     })
   }
   getAll(){
@@ -35,8 +39,16 @@ export class AddcandidatComponent implements OnInit {
       icon: 'success',
       title: 'Your work has been saved',
       showConfirmButton: false,
-      timer: 1000
+      timer: 2000
     });
-    this.candidatService.create(this.candidatForm.value).subscribe(() => this.getAll());
-    this.router.navigate(['/candidats']);  }
+    this.candidatService.create(this.candidatForm.value).subscribe(x => this.getAll());
+    // this.router.navigate(['/candidats']);
+  //   this.router.navigateByUrl('/entretien', { skipLocationChange: true }).then(() => {
+  //     this.router.navigate(['candidats']);
+  // });
+ }
+ uploadCV($event?:any){
+  this.cv = $event.target.files[0];
+  this.candidatForm.controls['cv'].setValue(this.cv);
+}
 }

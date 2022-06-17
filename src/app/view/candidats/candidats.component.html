@@ -15,8 +15,10 @@
     <div class="row">
 
       <div class="col-lg-4" *ngFor="let candidat of candidats">
+        <button (click)="deleteCandidat(candidat.id)">delete</button>
           <div class="text-center card-box">
             <div class="member-card pt-2 pb-2">
+
                <div class="thumb-lg member-thumb mx-auto "><img src="../../../assets/newemployee.png"
                   class="rounded-circle img-thumbnail" alt="profile-image"></div>
               <div class="">
@@ -25,13 +27,7 @@
               </div>
               <button (click)="goToCandidat(candidat.id)" type="button"
                 class="btn btn-primary mt-3 btn-rounded waves-effect w-md waves-light">See More</button>
-              <ul class="list-unstyled activity-leval">
-                <li class="noactive"></li>
-                <li class="noactive"></li>
-                <li class="noactive"></li>
-                <li></li>
-                <li></li>
-              </ul>
+
           </div>
         </div>
       </div>
@@ -60,4 +56,3 @@
 </div>
 <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
 </mat-paginator>
-{{candidats | json}}

@@ -12,7 +12,7 @@ export class Employe{
     public motDePasse?:string,
     public cin?:string,
     public etat?:string,
-    
+
     public vid?:File,
     public cv?:File,
     public image?:File,

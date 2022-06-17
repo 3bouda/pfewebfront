@@ -24,4 +24,8 @@ export class CandidatsComponent implements OnInit {
   goToCandidat(id:any){
     this.router.navigate(['candidat/',id]);
   }
+  deleteCandidat(id:any){
+    this.candidatService.delete(id).subscribe( x => this.getAll());
+
+  }
 }
