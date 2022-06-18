@@ -20,5 +20,7 @@ export class Employe{
     public imageUrl?:string,
     public cvUrl?:string,
     public vidUrl?:string,
+
+    public present?:Array<number>
   ){}
 }
