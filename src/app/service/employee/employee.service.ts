@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Employe } from 'src/app/models/employe';
 
-const URL = "http://localhost:8080/employee"
+const URL = "https://dry-fjord-29838.herokuapp.com/employee"
 
 
 @Injectable({

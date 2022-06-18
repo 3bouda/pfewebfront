@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const URL = "http://localhost:8080/departement"
+const URL = "https://dry-fjord-29838.herokuapp.com/departement"
 
 @Injectable({
   providedIn: 'root'

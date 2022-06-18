@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Candidat } from 'src/app/models/candidat';
 
 
-const URL = "http://localhost:8080/candidat"
+const URL = "https://dry-fjord-29838.herokuapp.com/candidat"
 
 @Injectable({
   providedIn: 'root'
@@ -37,3 +37,4 @@ export class CandidatService {
   }
 
 }
+//https://dry-fjord-29838.herokuapp.com/
