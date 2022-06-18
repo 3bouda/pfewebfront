@@ -1,5 +1,5 @@
 
-<div style="padding-left: 16px; padding-bottom: 16px;">
+<div class="d-flex justify-content-center" style="padding-left: 16px; padding-bottom: 16px;">
   <mat-card>
     <form [formGroup]="departementForm" (ngSubmit)="creat()">
       <mat-card-title>Ajouter département</mat-card-title>
@@ -20,25 +20,25 @@
       <br>
       <mat-form-field appearance="standard">
         <mat-label>nbrJrCon</mat-label>
-        <textarea cdkTextareaAutosize  matInput formControlName="nbrJrCon"></textarea>
+        <input   matInput formControlName="nbrJrCon">
       </mat-form-field>
 
       <br>
       <mat-form-field appearance="standard">
         <mat-label>modePoin</mat-label>
-        <textarea cdkTextareaAutosize  matInput formControlName="modePoin"></textarea>
+        <input   matInput formControlName="modePoin">
       </mat-form-field>
 
       <br>
       <mat-form-field appearance="standard">
         <mat-label>NbrPoinJr</mat-label>
-        <textarea cdkTextareaAutosize  matInput formControlName="NbrPoinJr"></textarea>
+        <input   matInput formControlName="NbrPoinJr">
       </mat-form-field>
 
       <br>
       <mat-form-field appearance="standard">
         <mat-label>horrairePoin</mat-label>
-        <textarea cdkTextareaAutosize  matInput formControlName="horrairePoin"></textarea>
+        <input   matInput formControlName="horrairePoin">
       </mat-form-field>
 
       <mat-card-actions>

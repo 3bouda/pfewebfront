@@ -4,7 +4,7 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 .container {
-  width: 800px;
+  width: 900px;
   height: 250px;
   position: absolute;
   top: 0;
@@ -17,9 +17,11 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-template-rows: 1fr;
   grid-gap: 15px;
+
 }
 .items {
-
+  height: 250px;
+  width: 250px;
   border-radius: 5px;
   display: grid;
   grid-template-rows: 2fr 1fr;
