@@ -39,6 +39,7 @@ export class AddemployeeComponent implements OnInit {
       cv:"",
       vid:"",
       image:"",
+
     })
   }
   getAll(){
