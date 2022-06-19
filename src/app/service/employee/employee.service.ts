@@ -38,4 +38,7 @@ export class EmployeeService {
   delete(id:string){
     return this.http.delete(`${URL}/${id}`);
   }
+  update(employee:Employe,id?:string){
+    return this.http.put(`${URL}/${id}`,employee);
+  }
 }

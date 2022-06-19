@@ -29,5 +29,8 @@ export class DepartementComponent implements OnInit {
   getAll(){
     this.employeeService.getAll().subscribe((data: any) => this.employees = data)
   }
+  deleteEmployee(id:any){
+    this.employeeService.delete(id).subscribe( x => this.getAll());
+  }
 
 }
