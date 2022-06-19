@@ -19,7 +19,6 @@ export class CandidatComponent implements OnInit {
 
   ngOnInit(): void {
     this.candidatForm=this.fb.group({
-      id:null,
       nom:"",
       prenom:"",
       tel:"",
@@ -48,7 +47,6 @@ export class CandidatComponent implements OnInit {
  }
 
  setValueInForm(){
-    this.candidatForm.controls['id'].setValue(this.candidat.id);
     this.candidatForm.controls['nom'].setValue(this.candidat.nom);
     this.candidatForm.controls['prenom'].setValue(this.candidat.prenom);
     this.candidatForm.controls['tel'].setValue(this.candidat.tel);
