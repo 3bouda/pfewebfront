@@ -47,3 +47,5 @@ body {
   background-color: Transparent;
   border: none;
 }
+input.ng-valid{ border-left: 3px solid green;}
+input.ng-invalid{ border-left: 6px solid red;}

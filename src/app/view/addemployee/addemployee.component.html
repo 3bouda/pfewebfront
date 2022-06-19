@@ -21,13 +21,25 @@
               <label class="labels">
                 Nom
               </label>
-              <input type="text" class="form-control" placeholder="Nom" formControlName="nom" value="">
+              <input type="text" class="form-control" placeholder="Nom" formControlName="nom" >
+              <div *ngIf="isValidPatternNom()" class="alert alert-warning">
+                Le nom est invalide
+                </div>
+                <div [hidden]="isRequiredNom()" class="alert alert-danger">
+                    Le Nom est un champ obligatoire
+                    </div>
+
             </div>
             <div class="col-md-6">
               <label class="labels">
                 prenom
               </label>
               <input type="text" class="form-control" value="" placeholder="Prenom" formControlName="prenom">
+              <div *ngIf="isValidPatternPrenom()" class="alert alert-warning">
+                Le prenom est invalide
+                </div>
+                <div [hidden]="isRequiredPrenom()" class="alert alert-danger">
+                  Le Prenom est un champ obligatoire</div>
             </div>
           </div>
           <div class="row mt-3">
@@ -36,30 +48,54 @@
                 Numero tel
               </label>
               <input type="text" class="form-control" placeholder="enter Numero tel" value="" formControlName="tel">
+              <div *ngIf="isValidPatternTel()" class="alert alert-warning">
+                Le numéro de téléphone est invalide
+                </div>
+                <div [hidden]="isRequiredTel()" class="alert alert-danger">
+                  Le numéro de téléphone est un champ obligatoire</div>
             </div>
             <div class="col-md-12">
               <label class="labels">
                 CIN
               </label>
               <input type="text" class="form-control" placeholder="enter CIN" value="" formControlName="CIN">
+              <div *ngIf="isValidPatternCin()" class="alert alert-warning">
+               ce CINest invalide
+                </div>
+                <div [hidden]="isRequiredCin()" class="alert alert-danger">
+                  Le CIN est un champ obligatoire</div>
+            
             </div>
             <div class="col-md-12">
               <label class="labels">
-                Addresse
+                Adresse
               </label>
-              <input type="text" class="form-control" placeholder="enter addresse" value="" formControlName="adresse">
+              <input type="text" class="form-control" placeholder="enter adresse" value="" formControlName="adresse">
+              <div *ngIf="isRequiredAdresse()" [hidden]="isRequiredAdresse()"
+              class="alert alert-danger">
+                L'adresse est un champ obligatoire</div>
             </div>
             <div class="col-md-12">
               <label class="labels">
                 e-mail
               </label>
               <input type="text" class="form-control" placeholder="enter e-mail" value="" formControlName="email">
+              <div *ngIf="isValidPatternEmail()" class="alert alert-warning">
+                email invalide
+                </div>
+                <div [hidden]="isRequiredEmail()" class="alert alert-danger">
+                  Email est un champ obligatoire</div>
             </div>
             <div class="col-md-12">
               <label class="labels">
                 Mot De Passe
               </label>
               <input type="text" class="form-control" placeholder="enter Mot De Passe" value="" formControlName="motDePasse">
+              <div *ngIf="isValidPatternMdp()" class="alert alert-warning">
+                mot de passe invalide
+                </div>
+                <div [hidden]="isRequiredMdp()" class="alert alert-danger">
+                  Mot de passe est un champ obligatoire</div>
             </div>
           </div>
           <div class="row mt-3">
@@ -86,7 +122,7 @@
 
           </div>
           <div class="mt-5 text-center">
-            <button class="btn btn-primary profile-button" type="submit">
+            <button class="btn btn-primary profile-button" type="submit" [disabled]="employeForm.invalid">
               Ajouter
             </button>
           </div>

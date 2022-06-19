@@ -14,16 +14,43 @@
                 </div>
 
                 <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" formControlName="nom" value="{{candidat?.nom}}" ></div>
-                    <div class="col-md-6"><label class="labels">prenom</label><input type="text" class="form-control" formControlName="prenom"  value="{{candidat?.prenom}}"></div>
+                    <div class="col-md-6"><label class="labels">Nom</label><input type="text" class="form-control" formControlName="nom" value="{{candidat?.nom}}" >
+                        <div *ngIf="isValidPatternNom()" class="alert alert-warning">
+                            Le nom est invalide
+                            </div>
+                            <div [hidden]="isRequiredNom()" class="alert alert-danger">
+                                Le Nom est un champ obligatoire
+                                </div></div>
+                    <div class="col-md-6"><label class="labels">prenom</label><input type="text" class="form-control" formControlName="prenom"  value="{{candidat?.prenom}}">
+                        <div *ngIf="isValidPatternPrenom()" class="alert alert-warning">
+                            Le prenom est invalide
+                            </div>
+                            <div [hidden]="isRequiredPrenom()" class="alert alert-danger">
+                              Le Prenom est un champ obligatoire</div>
+                    </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Numero tel</label><input type="text" class="form-control" formControlName="tel"  value="{{candidat?.tel}}"></div>
-                    <div class="col-md-12"><label class="labels">Addresse </label><input type="text" class="form-control" formControlName="adresse"  value="{{candidat?.adresse}}"></div>
-                    <div class="col-md-12"><label class="labels">e-mail</label><input type="text" class="form-control" formControlName="email"  value="{{candidat?.email}}"></div>
+                    <div class="col-md-12"><label class="labels">Numero tel</label><input type="text" class="form-control" formControlName="tel"  value="{{candidat?.tel}}">
+                        <div *ngIf="isValidPatternTel()" class="alert alert-warning">
+                            Le numéro de téléphone est invalide
+                            </div>
+                            <div [hidden]="isRequiredTel()" class="alert alert-danger">
+                              Le numéro de téléphone est un champ obligatoire</div>
+                    </div>
+                    <div class="col-md-12"><label class="labels">Addesse </label><input type="text" class="form-control" formControlName="adresse"  value="{{candidat?.adresse}}">
+                      
+                          <div [hidden]="isRequiredAdresse()" class="alert alert-danger">
+                            L'adresse est un champ obligatoire</div>
+                    </div>
+                    <div class="col-md-12"><label class="labels">e-mail</label><input type="text" class="form-control" formControlName="email"  value="{{candidat?.email}}">
+                        <div *ngIf="isValidPatternEmail()" class="alert alert-warning">
+                            Email invalide
+                             </div>
+                             <div [hidden]="isRequiredEmail()" class="alert alert-danger">
+                               Email est un champ obligatoire</div></div>
                 </div>
 
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Modifier</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"  [disabled]="candidatForm.invalid">Modifier</button></div>
             </div>
         </div>
     </form>

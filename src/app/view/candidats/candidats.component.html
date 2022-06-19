@@ -3,19 +3,15 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-4">
-
-        <button (click)="goToAddCandidat()" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein"
-        data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a" style="margin-top: 10px;">
-        <i class="mdi mdi-plus"></i>
-        Ajouter candidat
-      </button>
+      <button type="button" class="btn btn-info"  (click)="goToAddCandidat()"> Ajouter candidat</button>
       </div>
       <!-- end col -->
     </div>
     <div class="row">
 
       <div class="col-lg-4" *ngFor="let candidat of candidats">
-        <button (click)="deleteCandidat(candidat.id)">delete</button>
+        <button type="button" class="btn btn-light"  title="Delete" (click)="deleteCandidat(candidat.id)" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
+       
           <div class="text-center card-box">
             <div class="member-card pt-2 pb-2">
 
