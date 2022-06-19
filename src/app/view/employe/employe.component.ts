@@ -18,4 +18,5 @@ export class EmployeComponent implements OnInit {
   getEmploye(){
     this.employeService.getEmploye(this.activatedRoute.snapshot.params['id']).subscribe((data: any) => this.employe = data)
   }
+  
 }

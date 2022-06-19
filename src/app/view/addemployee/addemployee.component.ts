@@ -55,6 +55,7 @@ export class AddemployeeComponent implements OnInit {
     });
     this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['id']);
     this.employeForm.controls['etat'].setValue("congé");
+    this.employeForm.controls['present'].setValue([1,0]);
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
     this.router.navigate(['/departement',this.activatedRoute.snapshot.params['id']]);
     }
