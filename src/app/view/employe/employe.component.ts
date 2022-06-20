@@ -37,17 +37,7 @@ export class EmployeComponent implements OnInit {
     this.employeService.getEmploye(this.activatedRoute.snapshot.params['id']).subscribe((data: any) => this.employe = data)
   }
 
-  setValueInForm(){
 
-    this.employeForm.controls['nom'].setValue(this.employe.nom);
-    this.employeForm.controls['prenom'].setValue(this.employe.prenom);
-    this.employeForm.controls['tel'].setValue(this.employe.tel);
-    this.employeForm.controls['email'].setValue(this.employe.email);
-    this.employeForm.controls['adresse'].setValue(this.employe.adresse);
-
-    this.employeForm.controls['motDePasse'].setValue(this.employe.motDePasse);
-    this.employeForm.controls['CIN'].setValue(this.employe.cin);
- }
  async update(){
   Swal.fire({
     icon: 'success',

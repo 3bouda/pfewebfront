@@ -42,7 +42,7 @@ export class AddcandidatComponent implements OnInit {
       timer: 2000
     });
     this.candidatService.create(this.candidatForm.value).subscribe(x => this.getAll());
-    // this.router.navigate(['/candidats']);
+     this.router.navigate(['/candidats']);
   //   this.router.navigateByUrl('/entretien', { skipLocationChange: true }).then(() => {
   //     this.router.navigate(['candidats']);
   // });

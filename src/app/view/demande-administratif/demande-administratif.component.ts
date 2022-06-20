@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Demande } from 'src/app/models/demande';
+import { Employe } from 'src/app/models/employe';
+import { DemandeService } from 'src/app/service/demande/demande.service';
+import { EmployeeService } from 'src/app/service/employee/employee.service';
 import Swal from 'sweetalert2'
 @Component({
   selector: 'app-demande-administratif',
@@ -7,21 +11,28 @@ import Swal from 'sweetalert2'
 })
 export class DemandeAdministratifComponent implements OnInit {
 
-  constructor() { }
+  demandes: Demande[] = [];
+  constructor(private demandeService : DemandeService) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
-  ok(){
+
+  ok(objet:any,description:any){
     Swal.fire({
-      title: '<strong>Autorisation </strong>',
+      title: `${objet}` ,
       html:
-        ' <p>Bonjour, je demande une autorisation de 2 heures le 13/06 de 14h à 16h pour des obligations familiales.  </> ' ,
+      `${description}` ,
       showCloseButton: true,
-      
       focusConfirm: false,
-     
-      
-      
     })
+  }
+
+  getAll(){
+    this.demandeService.getAll().subscribe((data: any) => {this.demandes = data})
+  }
+
+  deleteDemande(id:any){
+    this.demandeService.delete(id).subscribe( x => this.getAll());
   }
 }

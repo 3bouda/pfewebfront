@@ -26,7 +26,6 @@ export class CandidatComponent implements OnInit {
       adresse:"",
     });
     this.getCandidat();
-    this.setValueInForm();
 
   }
   getAll(){
@@ -46,13 +45,7 @@ export class CandidatComponent implements OnInit {
     this.router.navigate(['/candidats']);
  }
 
- setValueInForm(){
-    this.candidatForm.controls['nom'].setValue(this.candidat.nom);
-    this.candidatForm.controls['prenom'].setValue(this.candidat.prenom);
-    this.candidatForm.controls['tel'].setValue(this.candidat.tel);
-    this.candidatForm.controls['email'].setValue(this.candidat.email);
-    this.candidatForm.controls['adresse'].setValue(this.candidat.adresse);
- }
+
  isValidPatternNom():boolean{
   return this.candidatForm.controls['nom'].errors?.['pattern'] &&this.candidatForm.controls['nom'].dirty;
   }
