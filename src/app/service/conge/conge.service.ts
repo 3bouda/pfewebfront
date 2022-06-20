@@ -15,10 +15,11 @@ export class CongeService {
   getConge(id:string){
     return this.http.get(`${URL}/${id}`);
   }
-  sendMessage(id:string,msg:string){
-    return this.http.post(`${URL}/${id}`,msg);
+
+  accept(id:any){
+    return this.http.get(`${URL}/${id}/accept`);
   }
-  delete(id:string){
-    return this.http.delete(`${URL}/${id}`);
+  refus(id:any){
+    return this.http.get(`${URL}/${id}`+"/refus");
   }
 }

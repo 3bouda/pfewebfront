@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Conge } from 'src/app/models/conge';
 import { CongeService } from 'src/app/service/conge/conge.service';
 import Swal from 'sweetalert2'
@@ -10,12 +11,16 @@ import Swal from 'sweetalert2'
 export class CongeComponent implements OnInit {
 
   conges:Conge[]=[]
-
-  constructor(private congeService : CongeService) { }
+  conge!:Conge;
+  constructor(private router:Router,private congeService : CongeService) { }
 
   ngOnInit(): void {
     this.getAll();
   }
+  getAll(){
+    this.congeService.getAll().subscribe((data: any) => {this.conges = data})
+  }
+
   ok(id:any){
     Swal.fire({
       title: 'vous-étes sûrs ?',
@@ -28,6 +33,7 @@ export class CongeComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Saved!', '', 'success')
+        this.congeService.accept(id).subscribe((data: any) => {this.conge = data});
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
       }
@@ -45,17 +51,16 @@ export class CongeComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Saved!', '', 'success')
-        this.deleteConge(id);
+        this.congeService.refus(id).subscribe((data: any) => {this.conge = data});
+
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
       }
     })
   }
-  getAll(){
-    this.congeService.getAll().subscribe((data: any) => {this.conges = data})
-  }
-  deleteConge(id:any){
-    this.congeService.delete(id).subscribe( x => this.getAll());
+
+  goToHistoriqueConge(){
+    this.router.navigate(['historiqueconge/']);
   }
 
 }

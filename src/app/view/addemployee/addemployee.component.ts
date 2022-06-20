@@ -36,7 +36,6 @@ export class AddemployeeComponent implements OnInit {
       motDePasse:['', [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/), Validators.minLength(8), ],
       ],
       CIN:['', [Validators.required,Validators.pattern('^[1|0][0-9]*$'),  Validators.minLength(8), Validators.maxLength(8)]],
-      etat:"",
       cv:"",
       vid:"",
       image:"",
@@ -55,7 +54,6 @@ export class AddemployeeComponent implements OnInit {
       timer: 3000
     });
     this.employeForm.controls['departementId'].setValue(this.activatedRoute.snapshot.params['id']);
-    this.employeForm.controls['etat'].setValue("congé");
     this.employeService.create(this.employeForm.value).subscribe(() => this.getAll());
     this.router.navigate(['/departement',this.activatedRoute.snapshot.params['id']]);
     }

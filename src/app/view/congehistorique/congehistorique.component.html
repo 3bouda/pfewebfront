@@ -1,13 +1,8 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container profile-page">
-  <button (click)="goToHistoriqueConge()" type="button" class="btn btn-info">
-    Historique Congé
-  </button>
   <div class="row">
-
-    <div class="col-xl-4 col-lg-7 col-md-12" *ngFor="let conge of conges">
-
-      <div class="card profile-header">
+    <div class="col-xl-4 col-lg-7 col-md-12" *ngFor="let conge of conges" >
+      <div class="card profile-header" *ngIf="conge.etat == 'refus'" style="border-color: green ;border-width:2px;border-style:solid ;">
         <div class="body">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-12">
@@ -24,16 +19,12 @@
 
               <div class="ml-4"><strong>De:</strong><span>{{conge.dateDebut | date}}</span><strong
                   class="ml-3">Jusqu'a:</strong><span>{{conge.dateFin | date}}</span></div>
-              <div class="ml-4">
-                <button class="btn btn-success btn-round " (click)="ok(conge.id)">Confirmer</button>
-                <button class="btn btn-danger btn-round ml-3" (click)="Notok(conge.id)">Refusé</button>
-              </div>
+
             </div>
           </div>
-        </div>
       </div>
     </div>
-
+    </div>
 
 
   </div>

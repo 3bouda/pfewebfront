@@ -6,6 +6,8 @@ import { ClientComponent } from './view/client/client.component';
 import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 import { CongeComponent } from './view/conge/conge.component';
+import { CongehistoriqueComponent } from './view/congehistorique/congehistorique.component';
+
 import { DemandeAdministratifComponent } from './view/demande-administratif/demande-administratif.component';
 import { AjouterDepartementComponent } from './view/ajouter-departement/ajouter-departement.component';
 import { DepartementsComponent } from './view/departements/departements.component';
@@ -36,6 +38,7 @@ const routes: Routes = [
 
   { path: 'client', component: ClientComponent},
 
+  { path: 'historiqueconge', component: CongehistoriqueComponent},
   { path: 'congé', component: CongeComponent},
   { path: 'demande', component: DemandeAdministratifComponent},
 
