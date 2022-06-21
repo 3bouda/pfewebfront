@@ -29,7 +29,7 @@ export class EmployeeService {
     formData.append("adresse",employee.adresse!);
     formData.append("motDePasse",employee.motDePasse!);
     formData.append("etat",employee.etat!);
-    formData.append("CIN",employee.cin!);
+    formData.append("cin",employee.cin!);
     formData.append("departementId",employee.departementId!);
 
 

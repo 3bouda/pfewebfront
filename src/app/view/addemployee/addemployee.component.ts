@@ -35,7 +35,7 @@ export class AddemployeeComponent implements OnInit {
 
       motDePasse:['', [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/), Validators.minLength(8), ],
       ],
-      CIN:['', [Validators.required,Validators.pattern('^[1|0][0-9]*$'),  Validators.minLength(8), Validators.maxLength(8)]],
+      cin:['', [Validators.required,Validators.pattern('^[1|0][0-9]*$'),  Validators.minLength(8), Validators.maxLength(8)]],
       cv:"",
       vid:"",
       image:"",
@@ -96,10 +96,10 @@ export class AddemployeeComponent implements OnInit {
                       return this.employeForm.controls['tel'].errors?.['pattern'] &&this.employeForm.controls['tel'].dirty;
                       }
                       isRequiredCin():boolean{
-                        return !this.employeForm.controls['CIN'].errors?.['required'] || this.employeForm.controls['CIN'].pristine;
+                        return !this.employeForm.controls['cin'].errors?.['required'] || this.employeForm.controls['cin'].pristine;
                         }
                         isValidPatternCin():boolean{
-                          return this.employeForm.controls['CIN'].errors?.['pattern'] &&this.employeForm.controls['CIN'].dirty;
+                          return this.employeForm.controls['cin'].errors?.['pattern'] &&this.employeForm.controls['cin'].dirty;
                           }
                           isRequiredMdp():boolean{
                             return !this.employeForm.controls['motDePasse'].errors?.['required'] || this.employeForm.controls['motDePasse'].pristine;
