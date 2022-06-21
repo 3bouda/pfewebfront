@@ -4,9 +4,7 @@
     <div class="row">
       <div class="col-sm-4">
 
-        <button (click)="goToAddEmployee()" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein"
-          data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a" style="margin-top: 10px;">
-          <i class="mdi mdi-plus"></i>
+        <button (click)="goToAddEmployee()" type="button" class="btn btn-info">
           Ajouter employé
         </button>
       </div>
@@ -16,7 +14,7 @@
       <!-- end col -->
       <div class="col-lg-4" *ngFor="let employee of employees">
         <div *ngIf="employee.departementId == identifiant">
-          <button (click)="deleteEmployee(employee.id)">delete</button>
+          <button type="button" class="btn btn-light"  title="Delete" (click)="deleteEmployee(employee.id)" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></button>
           <div class="text-center card-box">
             <div class="member-card pt-2 pb-2">
               <div class="thumb-lg member-thumb mx-auto "><img src="{{employee.imageUrl}}"
@@ -54,5 +52,3 @@
   </div>
   <!-- container -->
 </div>
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
-</mat-paginator>

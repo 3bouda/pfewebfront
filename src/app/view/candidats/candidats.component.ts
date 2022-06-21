@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Candidat } from 'src/app/models/candidat';
 import { CandidatService } from 'src/app/service/candidat/candidat.service';
@@ -9,14 +10,15 @@ import { CandidatService } from 'src/app/service/candidat/candidat.service';
   styleUrls: ['./candidats.component.css']
 })
 export class CandidatsComponent implements OnInit {
-  candidats: Candidat[]=[]
+  candidats: Candidat[]=[];
   constructor(private router:Router,private candidatService: CandidatService) { }
 
-  ngOnInit(): void {
-    this.getAll();
+
+   ngOnInit() {
+     this.getAll();
   }
-  getAll(){
-    this.candidatService.getAll().subscribe((data: any) => this.candidats = data)
+   getAll(){
+    this.candidatService.getAll().subscribe((data: any) => this.candidats  = data);
   }
   goToAddCandidat(){
   this.router.navigate(['addcandidat/']);

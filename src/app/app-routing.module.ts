@@ -6,6 +6,8 @@ import { ClientComponent } from './view/client/client.component';
 import { DepartementComponent } from './view/departement/departement.component';
 import { AddemployeeComponent } from './view/addemployee/addemployee.component';
 import { CongeComponent } from './view/conge/conge.component';
+import { CongehistoriqueComponent } from './view/congehistorique/congehistorique.component';
+
 import { DemandeAdministratifComponent } from './view/demande-administratif/demande-administratif.component';
 import { AjouterDepartementComponent } from './view/ajouter-departement/ajouter-departement.component';
 import { DepartementsComponent } from './view/departements/departements.component';
@@ -14,8 +16,12 @@ import { CandidatsComponent } from './view/candidats/candidats.component';
 import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
 import { EntretienComponent } from './view/entretien/entretien.component';
 import { ReunionComponent } from './view/reunion/reunion.component';
+import { LoginComponent } from './view/login/login.component';
+
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent},
+
   { path: 'home', component: HomeComponent},
 
   { path: 'departements', component: DepartementsComponent},
@@ -36,6 +42,7 @@ const routes: Routes = [
 
   { path: 'client', component: ClientComponent},
 
+  { path: 'historiqueconge', component: CongehistoriqueComponent},
   { path: 'congé', component: CongeComponent},
   { path: 'demande', component: DemandeAdministratifComponent},
 
