@@ -16,8 +16,12 @@ import { CandidatsComponent } from './view/candidats/candidats.component';
 import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
 import { EntretienComponent } from './view/entretien/entretien.component';
 import { ReunionComponent } from './view/reunion/reunion.component';
+import { LoginComponent } from './view/login/login.component';
+
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent},
+
   { path: 'home', component: HomeComponent},
 
   { path: 'departements', component: DepartementsComponent},

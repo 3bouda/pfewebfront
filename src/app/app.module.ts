@@ -35,6 +35,7 @@ import { AddcandidatComponent } from './view/addcandidat/addcandidat.component';
 import { EntretienComponent } from './view/entretien/entretien.component';
 import { ReunionComponent } from './view/reunion/reunion.component';
 import { CongehistoriqueComponent } from './view/congehistorique/congehistorique.component';
+import { LoginComponent } from './view/login/login.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { CongehistoriqueComponent } from './view/congehistorique/congehistorique
     AddcandidatComponent,
     EntretienComponent,
     ReunionComponent,
-    CongehistoriqueComponent
+    CongehistoriqueComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
